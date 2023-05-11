@@ -99,10 +99,11 @@ public class MainClass {
 //		});
 
 		List<Product> prodottiscontati = esercizio3(prodotti5);
-		prodottiscontati.forEach(prodotto -> {
-			System.out.println(prodotto);
-			System.out.println();
-		});
+
+//		prodottiscontati.forEach(prodotto -> {
+//			System.out.println(prodotto);
+//			System.out.println();
+//		});
 
 		esercizio4();
 	}
@@ -122,7 +123,7 @@ public class MainClass {
 	public static List<Product> esercizio3(List<Product> prodotti) {
 		List<Product> prodottiScontati = prodotti.stream().filter(prodotto -> prodotto.getCategory() == "Boys")
 				.map(prodotto -> {
-					prodotto.SetPrice(prodotto.getPrice() - (prodotto.getPrice() * 0.9));
+					prodotto.SetPrice(prodotto.getPrice() - (prodotto.getPrice() * 0.1));
 					return prodotto;
 				}).toList();
 		return prodottiScontati;
@@ -132,11 +133,4 @@ public class MainClass {
 
 	}
 
-	public static void setSconto(Product prodotto) {
-
-		double sconto = (prodotto.getPrice() * 0.10);
-		double prezzoScontato = prodotto.getPrice() - sconto;
-		prodotto.SetPrice(prezzoScontato);
-
-	}
 }
